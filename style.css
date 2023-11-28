@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    font-weight: normal;
+}
+
+html, body {
+    background:black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.clock{
+    height: clamp(20rem, 40vw + 4rem ,40rem);
+    width: clamp(20rem, 40vw + 4rem ,40rem);
+    background-color: #EEEEEE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    filter: drop-shadow(0 0 10px #dadada);
+    transition: all 0.1s ease;
+}
+.time{
+    --rotation:0;
+    padding: 0.2rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: clamp(1.4rem, 2.6vw + 0.2rem, 2.8rem);
+    font-weight: 600;
+    border: 2px solid #333;
+    filter:drop-shadow(0 0 25px black);
+    border-radius: 50%;
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    background-color: #222;
+    height: clamp(10px,3vw + 0.5rem,40px);
+    width: clamp(10px,3vw + 0.5rem,40px);
+    border-radius: 50%;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 10px black;
+}
+.hand{
+    --rotate:0deg;
+    bottom: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotate(--rotate);
+}
+.hand-hour{
+    background-color: #222;
+    height: 30%;
+    width: 4%;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 10px black;
+    z-index: 5;
+    transform: rotate(var(--rotate));
+}
+.hand-minute{
+    background-color: #222;
+    box-shadow: 0 0 10px black;
+    height: 33%;
+    width: 2.8%;
+    border-radius: 60% 60% 0 0;
+    transform: rotate(var(--rotate));
+}
+.hand-second{
+    background-color: crimson;
+    box-shadow: 0 0 7px crimson;
+    height: 40%;
+    width: 1.4%;
+    border-radius: 60% 60% 0 0;
+    transform: rotate(var(--rotate));
+}
+
+.time-1{--rotation:30deg;}
+.time-2{--rotation:60deg;}
+.time-3{--rotation:90deg;}
+.time-4{--rotation:120deg;}
+.time-5{--rotation:150deg;}
+.time-6{--rotation:180deg;}
+.time-7{--rotation:210deg;}
+.time-8{--rotation:240deg;}
+.time-9{--rotation:270deg;}
+.time-10{--rotation:300deg;}
+.time-11{--rotation:330deg;}
